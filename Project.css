@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=fira+sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.main-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left,
+.right {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    background-color: #262525;
+    width: 70%;
+    padding-left: 3rem;
+}
+
+.right {
+    background: linear-gradient(-45deg, cyan, #262525 70%);
+    width: 30%;
+}
+
+
+.content {
+    padding: 20px;
+    margin-left: 4rem;
+    border-left: 3px solid cyan;
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.detail {
+    font-size: 1.2rem;
+    color: white;
+    max-width: 38rem;
+    margin: 1.1rem 0 3rem 0;
+    line-height: 1.8rem;
+}
+
+
+.design .circle {
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.circle:nth-child(1) {
+    background: linear-gradient(90deg, transparent 50%, #262525 -50%);
+    width: 38rem;
+}
+
+.circle:nth-child(2) {
+    background-image: url('pic-removebg-preview.png');
+    width: 30rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: .8rem solid white;
+    box-shadow: 0 0 1rem white, inset 0 0 1rem white,
+        0 0 2rem cyan, inset 0 0 2rem cyan,
+        0 0 4rem cyan, inset 0 0 4rem cyan;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+
+    .left {
+        padding-left: 2rem;
+    }
+
+    .right {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        margin-left: 2rem;
+    }
+
+    .circle:nth-child(1) {
+        width: 70%;
+    }
+
+    .circle:nth-child(2) {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .left {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .right {
+        width: 100%;
+        height: auto;
+    }
+
+   
+    .detail {
+        font-size: 1rem;
+    }
+
+  
+
+    .circle:nth-child(1),
+    .circle:nth-child(2) {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+  
+
+    .detail {
+        font-size: 0.9rem;
+    }
+
+   
+
+   
+}

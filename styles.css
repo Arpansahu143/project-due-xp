@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=fira+sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.main-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.navlist {
+    margin-left: 430px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    display: flex;
+    gap: 3.5rem;
+    height: 10vh;
+    align-items: center;
+    position: fixed;
+    width: calc(100% - 430px); /* Adjust width to account for margin */
+}
+
+.navlist li {
+    list-style: none;
+}
+
+.navlist li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.navlist li a::after,
+.navlist .active::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: .1rem;
+    left: 0;
+    bottom: -5px;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s;
+}
+
+.navlist li a:hover::after,
+.navlist .active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.left,
+.right {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    background-color: #262525;
+    width: 70%;
+    padding-left: 3rem;
+}
+
+.right {
+    background: linear-gradient(-45deg, red, #262525 70%);
+    width: 30%;
+}
+
+.icons .fa-brands {
+    color: #bbb;
+    font-size: 1.7rem;
+}
+
+.icons {
+    margin-left: -10px;
+    margin-right: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.content {
+    padding: 20px;
+    margin-left: 4rem;
+    border-left: 3px solid red;
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.intro {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.content .intro span {
+    font-size: 2.5rem;
+    color: red;
+}
+
+.content h1 {
+    font-size: 4rem;
+    color: red;
+}
+
+.detail {
+    font-size: 1.2rem;
+    color: white;
+    max-width: 38rem;
+    margin: 1.1rem 0 3rem 0;
+    line-height: 1.8rem;
+}
+
+.btn button {
+    border: .1rem solid red;
+    font-size: 1.1rem;
+    padding: .8rem 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+button:nth-child(1) {
+    color: #262525;
+    background-color: red;
+}
+
+button:nth-child(2) {
+    color: red;
+    background: transparent;
+    margin-left: 2rem;
+}
+
+button:nth-child(1):hover {
+    color: red;
+    background: transparent;
+}
+
+button:nth-child(2):hover {
+    color: #262525;
+    background: red;
+}
+
+.icons .fa-brands:hover {
+    cursor: pointer;
+    background: linear-gradient(white, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.design .circle {
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.circle:nth-child(1) {
+    background: linear-gradient(90deg, transparent 50%, #262525 -50%);
+    width: 38rem;
+}
+
+.circle:nth-child(2) {
+    background-image: url('pic-removebg-preview.png');
+    width: 30rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: .8rem solid white;
+    box-shadow: 0 0 1rem white, inset 0 0 1rem white,
+        0 0 2rem red, inset 0 0 2rem red,
+        0 0 4rem red, inset 0 0 4rem red;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .navlist {
+        margin-left: 20px;
+        gap: 2rem;
+    }
+
+    .left {
+        padding-left: 2rem;
+    }
+
+    .right {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        margin-left: 2rem;
+    }
+
+    .circle:nth-child(1) {
+        width: 70%;
+    }
+
+    .circle:nth-child(2) {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navlist {
+        flex-direction: column;
+        margin: 10px 20px;
+        width: auto;
+        font-size: 1rem;
+    }
+
+    .left {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .right {
+        width: 100%;
+        height: auto;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .detail {
+        font-size: 1rem;
+    }
+
+    .btn button {
+        font-size: 1rem;
+    }
+
+    .circle:nth-child(1),
+    .circle:nth-child(2) {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navlist {
+        left:20px;
+        font-size: 0.9rem;
+    }
+
+    .right{
+        width:30%;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .detail {
+        font-size: 0.9rem;
+    }
+
+    .btn button {
+        font-size: 0.9rem;
+    }
+
+    .icons .fa-brands {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 360px) {
+    .navlist {
+        justify-content: center;
+        
+        margin-top:500px;
+        left:20px;
+        font-size: 0.9rem;
+    }
+.left{
+    height:100%;
+}
+    .right{
+        width:30%;
+        height:50%;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .detail {
+        font-size: 0.9rem;
+    }
+
+    .btn button {
+        font-size: 0.9rem;
+    }
+
+    .icons .fa-brands {
+        font-size: 1.5rem;
+    }
+}
+
+.btn a{
+    text-decoration: none;
+    color: red;
+}
+.btn a:hover{
+color: #262525;
+transition:0.7s ease;
+}
+
